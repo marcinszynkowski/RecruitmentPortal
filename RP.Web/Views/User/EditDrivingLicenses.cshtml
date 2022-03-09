@@ -1,0 +1,28 @@
+﻿@model RP.Entities.UserModule.ViewModels.DrivingLivensesViewModel
+@{
+    ViewBag.Title = "EditDrivingLicenses";
+}
+
+<h2>Prawa jazdy</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.DropDownListFor(model => model.selectedId, new SelectList(Model.list, "Id", "Category"), "Wybierz element do edycji", new { @class = "form-control" })
+    </div>
+
+    <button name="action" value="edit">Edytuj</button>
+
+    <div class="form-group">
+        @Html.DropDownListFor(model => model.selectedCatId, new SelectList(Model.catList, "Id", "Category"), "Wybierz element do edycji", new { @class = "form-control" })
+    </div>
+
+    <button name="action" value="add">Dodaj</button>
+    <button name="action" value="delete">Usuń</button>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+}

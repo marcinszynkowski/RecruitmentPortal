@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04658C5A-B4DA-46EA-BA65-E267DB84967B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>RP.AdminModule</RootNamespace>
+    <AssemblyName>RP.AdminModule</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminModule.cs" />
+    <Compile Include="Services\CityService.cs" />
+    <Compile Include="Services\CompanyService.cs" />
+    <Compile Include="Services\CourseKindService.cs" />
+    <Compile Include="Services\CourseTypeService.cs" />
+    <Compile Include="Services\DrivingLicenseService.cs" />
+    <Compile Include="Services\ForeignLanguageLevelService.cs" />
+    <Compile Include="Services\ForeignLanguageService.cs" />
+    <Compile Include="Services\FormOfEmploymentService.cs" />
+    <Compile Include="Interfaces\ICourseKindService.cs" />
+    <Compile Include="Interfaces\ICourseTypeService.cs" />
+    <Compile Include="Interfaces\IDrivingLicenseService.cs" />
+    <Compile Include="Interfaces\IForeignLanguageLevelService.cs" />
+    <Compile Include="Interfaces\IForeignLanguageService.cs" />
+    <Compile Include="Interfaces\IFormOfEmploymentService.cs" />
+    <Compile Include="Interfaces\IPaymentTypeService.cs" />
+    <Compile Include="Interfaces\IXmlService.cs" />
+    <Compile Include="Interfaces\ICityService.cs" />
+    <Compile Include="Interfaces\ICompanyService.cs" />
+    <Compile Include="Interfaces\IPositionService.cs" />
+    <Compile Include="Interfaces\ISurveyQuestionTypeService.cs" />
+    <Compile Include="Services\PaymentTypeService.cs" />
+    <Compile Include="Services\PositionService.cs" />
+    <Compile Include="Services\SurveyQuestionTypeService.cs" />
+    <Compile Include="Services\XmlService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RP.AccountModule\RP.AccountModule.csproj">
+      <Project>{753F29BF-5CED-48AF-B9FD-16DA34B2604F}</Project>
+      <Name>RP.AccountModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RP.Data\RP.Data.csproj">
+      <Project>{4E2417A9-011E-4CCA-A8D3-55D9C1068E87}</Project>
+      <Name>RP.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RP.Entities\RP.Entities.csproj">
+      <Project>{05EF2878-9CAB-4CDE-B2F3-FE4DE5E9032D}</Project>
+      <Name>RP.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RP.RecruitmentModule\RP.RecruitmentModule.csproj">
+      <Project>{6F7E395A-DB59-441E-B43E-D879D9C2ECC5}</Project>
+      <Name>RP.RecruitmentModule</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

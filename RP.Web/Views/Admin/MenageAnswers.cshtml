@@ -1,0 +1,48 @@
+﻿@model RP.Entities.AdminModule.ViewModels.MenageAnswersViewModel
+
+@{
+    ViewBag.Title = "MenageAnswers";
+}
+
+<h2 class="text-center">Zarządzanie odpowiedziami do pytań zamkniętych/półotwartych</h2>
+
+<div>
+    @Html.ActionLink("Powrót", "MenageSurveyQuestions", "Admin", new { recruitmentProcessId = Model.RecruitmentProcessId }, new { @class = "btn btn-dark" })
+</div><br />
+
+<div>
+    @Html.ActionLink("Dodanie odpowiedzi", "AddAnswer", "Admin", new { id = Model.SurveyQuestionId, recruitmentProcessId = Model.RecruitmentProcessId, questionTypeId = Model.SurveyQuestionTypeId }, new { @class = "btn btn-dark" })
+</div><br />
+
+<div>
+    <table class="table table-striped table-condensed table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>ID Pytania</th>
+                <th>Odpowiedź</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model.SurveyQuestionList)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(m => i.Id)</td>
+                    @if (i.ParentQuestionId != null)
+                    {
+                        <td> @Html.DisplayFor(m => i.ParentQuestionId)</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    <td> @Html.DisplayFor(m => i.Question)</td>
+                    <td>@Html.ActionLink("Edytuj", "EditAnswer", "Admin", new { id = i.Id, recruitmentProcessId = Model.RecruitmentProcessId, questionId = Model.SurveyQuestionId, questionTypeId = Model.SurveyQuestionTypeId }, new { @class = "btn btn-dark" })</td>
+                    <td>@Html.ActionLink("Usuń", "DeleteAnswer", "Admin", new { id = i.Id, recruitmentProcessId = Model.RecruitmentProcessId, questionId = Model.SurveyQuestionId, questionTypeId = Model.SurveyQuestionTypeId }, new { @class = "btn btn-dark" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

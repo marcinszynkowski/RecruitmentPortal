@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05EF2878-9CAB-4CDE-B2F3-FE4DE5E9032D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>RP.Entities</RootNamespace>
+    <AssemblyName>RP.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountModule.ViewModels\ResetPasswordViewModel.cs" />
+    <Compile Include="AccountModule.ViewModels\SendConfirmationEmailAgainViewModel.cs" />
+    <Compile Include="AccountModule.ViewModels\UserSignInViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddAnswerViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddCityViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddCompanyViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddCourseKindViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddCourseTypeViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddForeignLanguageLevelViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddForeignLanguageViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddFormOfEmploymentViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddPaymentTypeViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddPositionViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddRecruitmentProcessViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddSurveyQuestionViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddUserViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AddDrivingLicenseViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeleteAnswerViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeleteCityViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeleteCompanyViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeleteCourseKindViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeleteCourseTypeViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeleteDrivingLicenseViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeleteForeignLanguageLevelViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeleteForeignLanguageViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeleteFormOfEmploymentViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeletePaymentTypeViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeletePositionViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeleteRecruitmentProcessViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeleteSurveyQuestionViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\DeleteUserViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditAnswerViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditCityViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditCompanyViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditCourseKindViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditCourseTypeViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditDrivingLicenseViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditForeignLanguageLevelViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditForeignLanguageViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditFormOfEmploymentViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditPaymentTypeViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditPositionViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditRecruitmentProcessViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditSurveyQuestionViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\EditUserViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\MenageAnswersViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\MenageSurveyQuestionsViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\AplicantsListViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\MoreInfoUserViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\SendEmailUsersViewModel.cs" />
+    <Compile Include="AdminModule.ViewModels\SendEmailUserViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\AnswerViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\ApplyFilesViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\ApplyViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\FilterByCityViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\FilterByCompanyViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\FilterByFormOfEmploymentViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\FilterByPaymentTypeViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\FilterByPositionViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\FilterViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\RecruitmentProcessViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\SurveyClosedQuestionMultipleAnswersViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\SurveyClosedQuestionOneAnswerViewModel.cs" />
+    <Compile Include="RecruitmentModule.ViewModels\SurveyOpenQuestionViewModel.cs" />
+    <Compile Include="Recruitment\City.cs" />
+    <Compile Include="Recruitment\Company.cs" />
+    <Compile Include="Recruitment\PaymentType.cs" />
+    <Compile Include="AccountModule.ViewModels\UserSignUpViewModel.cs" />
+    <Compile Include="Recruitment\FormOfEmployment.cs" />
+    <Compile Include="Recruitment\Position.cs" />
+    <Compile Include="Recruitment\ProcessStatus.cs" />
+    <Compile Include="Recruitment\RecruitmentProcess.cs" />
+    <Compile Include="Recruitment\SurveyAnswer.cs" />
+    <Compile Include="Recruitment\SurveyQuestion.cs" />
+    <Compile Include="Recruitment\SurveyQuestionType.cs" />
+    <Compile Include="UserModule.ViewModels\AddWorkExperienceViewModel.cs" />
+    <Compile Include="UserModule.ViewModels\CoursesViewModel.cs" />
+    <Compile Include="UserModule.ViewModels\cvViewModel.cs" />
+    <Compile Include="UserModule.ViewModels\DeleteUserAccountViewModel.cs" />
+    <Compile Include="UserModule.ViewModels\DeleteWorkExperienceViewModel.cs" />
+    <Compile Include="UserModule.ViewModels\DrivingLivensesViewModel.cs" />
+    <Compile Include="UserModule.ViewModels\EducationDataViewModel.cs" />
+    <Compile Include="UserModule.ViewModels\ForeignLanguagesViewModel.cs" />
+    <Compile Include="UserModule.ViewModels\InterestsViewModel.cs" />
+    <Compile Include="UserModule.ViewModels\SkillsViewModel.cs" />
+    <Compile Include="UserModule.ViewModels\UserProfileViewModel.cs" />
+    <Compile Include="UserModule.ViewModels\EditWorkExperienceViewModel.cs" />
+    <Compile Include="User\Course.cs" />
+    <Compile Include="User\CourseKind.cs" />
+    <Compile Include="User\CourseType.cs" />
+    <Compile Include="User\DrivingLicense.cs" />
+    <Compile Include="User\Education.cs" />
+    <Compile Include="User\EducationLevel.cs" />
+    <Compile Include="User\ForeignLanguage.cs" />
+    <Compile Include="User\ForeignLanguageLevel.cs" />
+    <Compile Include="User\Interest.cs" />
+    <Compile Include="User\PersonalData.cs" />
+    <Compile Include="Account\Role.cs" />
+    <Compile Include="User\Skill.cs" />
+    <Compile Include="Account\User.cs" />
+    <Compile Include="User\UserForeignLanguage.cs" />
+    <Compile Include="User\WorkExperience.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

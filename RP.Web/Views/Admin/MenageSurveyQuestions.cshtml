@@ -1,0 +1,52 @@
+﻿@model RP.Entities.AdminModule.ViewModels.MenageSurveyQuestionsViewModel
+
+@{
+    ViewBag.Title = "MenageSurveyQuestions";
+}
+<h2 class="text-center">Zarządzanie pytaniami do ankiety dla procesu o kodzie @Model.RecruitmentProcessCode</h2>
+
+<div>
+    @Html.ActionLink("Powrót", "MenageRecruitmentProcesses", "Admin", null, new { @class = "btn btn-dark" })
+</div><br />
+
+<div>
+    @Html.ActionLink("Dodanie pytania", "AddSurveyQuestion", "Admin", new { recruitmentProcessId = Model.RecruitmentProcessId }, new { @class = "btn btn-dark" })
+</div><br />
+
+<div>
+    <table class="table table-striped table-condensed table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Pytanie</th>
+                <th>Typ pytania</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model.SurveyQuestionList)
+            {
+                if (i.ParentQuestionId == null)
+                {
+                    <tr>
+                        <td> @Html.DisplayFor(m => i.Id)</td>
+                        <td> @Html.DisplayFor(m => i.Question)</td>
+                        <td> @Html.DisplayFor(m => i.SurveyQuestionTypes.Name)</td>
+                        @if (i.SurveyQuestionTypes.Name != "Otwarte")
+                        {
+                            <td>@Html.ActionLink("Odpowiedzi", "MenageAnswers", "Admin", new { id = i.Id, recruitmentProcessId = Model.RecruitmentProcessId, questionTypeId = i.SurveyQuestionTypeId }, new { @class = "btn btn-dark" })</td>
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+                        <td>@Html.ActionLink("Edytuj", "EditSurveyQuestion", "Admin", new { id = i.Id, processCode = Model.RecruitmentProcessCode }, new { @class = "btn btn-dark" })</td>
+                        <td>@Html.ActionLink("Usuń", "DeleteSurveyQuestion", "Admin", new { id = i.Id, processCode = Model.RecruitmentProcessCode }, new { @class = "btn btn-dark" })</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

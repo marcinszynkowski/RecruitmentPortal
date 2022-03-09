@@ -1,0 +1,103 @@
+﻿
+
+@model RP.Entities.UserModule.ViewModels.UserProfileViewModel
+
+@{
+    ViewBag.Title = "Edycja Profilu";
+}
+
+<hr />
+<div class="col">
+    @Html.ActionLink("Wykształcenie", "EditEducationData", null, htmlAttributes: new { @class = "btn btn-dark" })
+    @Html.ActionLink("Kursy", "EditCourses", "User", null, htmlAttributes: new { @class = "btn btn-dark" })
+    @Html.ActionLink("Znajomość języków obcych", "EditForeignLanguages", null, htmlAttributes: new { @class = "btn btn-dark" })
+    @Html.ActionLink("Umiejętności", "EditSkills", null, htmlAttributes: new { @class = "btn btn-dark" })
+    @Html.ActionLink("Doświadczenie zawodowe", "WorkExperience", null, htmlAttributes: new { @class = "btn btn-dark" })
+    @Html.ActionLink("Prawa jazdy", "EditDrivingLicenses", null, htmlAttributes: new { @class = "btn btn-dark" })
+    @Html.ActionLink("Zainteresowania", "EditInterests", null, htmlAttributes: new { @class = "btn btn-dark" })
+
+    @*@Html.ActionLink("Generuj CV", "CV", null, htmlAttributes: new { @class = "btn btn-primary" })*@
+
+
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Edycja Profilu</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Birthday, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Birthday, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                    @Html.ValidationMessageFor(model => model.Birthday, "")
+                </div>
+            </div>
+            @Html.ActionLink("Usuń konto", "DeleteUserAccount", null, htmlAttributes: new { @class = "btn btn-dark" })
+
+            <input type="submit" value="Zapisz" class="btn btn-dark" />
+
+        </div>
+        }
+    </div>
+    <div class="col-2">
+        @Html.ActionLink("Generuj CV", "CV", null, htmlAttributes: new { @class = "btn btn-dark" })
+    </div>
+</div>
+
+
+<div>
+    @Html.ActionLink("Powrót do strony domowej", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

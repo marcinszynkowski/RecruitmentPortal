@@ -1,0 +1,10 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace RP.Entities.AdminModule.ViewModels
+{
+    public class DeleteCourseKindViewModel
+    {
+        [Display(Name = "Rodzaj kursu")]
+        public string Name { get; set; }
+    }
+}

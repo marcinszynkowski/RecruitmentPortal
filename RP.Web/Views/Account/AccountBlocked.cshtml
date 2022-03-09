@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "AccountBlocked";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+Twoje konto zostało zablokowane, aby je odblokować zresetuj hasło.
+
+<div class="form-group">
+    <div class="col-md-10">
+        @Html.ActionLink("Zresetuj hasło", "ResetPassword", "Account", null, new { @class = "btn btn-dark" })
+    </div>
+</div>

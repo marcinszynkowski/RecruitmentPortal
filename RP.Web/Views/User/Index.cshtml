@@ -1,0 +1,36 @@
+﻿@model IEnumerable<RP.Entities.Recruitment.RecruitmentProcess>
+    
+@{
+        ViewBag.Title = "Strona domowa";
+}
+
+    <h2>Witaj użytkowniku <b>@Context.User.Identity.Name</b>!</h2>
+
+    <h2> Oferty, które mogą cię zainteresować : </h2> 
+
+  
+    <table class="table table-striped table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                @*<th>Stanowisko</th>*@
+                <th>Wymagania</th>
+                <th>Miasto</th>
+                <th>Firma</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(m => i.Id)</td>]
+                @*<td>@Html.DisplayFor(m => i.Position)</td>*@
+                <td>@Html.DisplayFor(m => i.Requirements)</td>
+                <td> @Html.DisplayFor(m => i.CityId)</td>
+                <td> @Html.DisplayFor(m => i.CompanyId)</td>
+                <td>@Html.ActionLink("Aplikuj", "DeleteWorkExperience", "User", new { id = i.Id }, null)</td>
+            </tr>
+    }
+        </tbody>
+    </table>

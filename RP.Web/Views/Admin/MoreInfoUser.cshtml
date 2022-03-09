@@ -1,0 +1,255 @@
+﻿@model RP.Entities.AdminModule.ViewModels.MoreInfoUserViewModel
+
+@{
+    ViewBag.Title = "MoreInfoUser";
+}
+
+<h2 class="text-center">Więcej informacji o użytkowniku @Model.User.Email</h2>
+
+<div>
+    @Html.ActionLink("Powrót", "MenageUsers", "Admin", null, new { @class = "btn btn-dark" })
+</div><br/>
+
+      <div>
+          <h3>Dane o koncie</h3>
+          <table class="table table-striped table-condensed table-hover">
+              <thead class="thead-dark">
+                  <tr>
+                      <th>ID</th>
+                      <th>Email</th>
+                      <th>Błędne logowania</th>
+                      <th>Blokada konta</th>
+                      <th>Ostatnie logowanie</th>
+                      <th>Ostatnia zmiana hasła</th>
+                      <th>Rola</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td> @Html.DisplayFor(m => Model.User.Id)</td>
+                      <td> @Html.DisplayFor(m => Model.User.Email)</td>
+                      <td> @Html.DisplayFor(m => Model.User.AccessFailedCount)</td>
+                      <td> @Html.DisplayFor(m => Model.User.LockoutEnabled)</td>
+                      <td> @Html.DisplayFor(m => Model.User.LastLogin)</td>
+                      <td> @Html.DisplayFor(m => Model.User.PasswordLastModified)</td>
+                      <td> @Html.DisplayFor(m => Model.User.Roles.Name)</td>
+                  </tr>
+              </tbody>
+          </table>
+
+          <h3>Dane personalne</h3>
+          <table class="table table-striped table-condensed table-hover">
+              <thead class="thead-dark">
+                  <tr>
+                      <th>Imię</th>
+                      <th>Nazwisko</th>
+                      <th>Data urodzenia</th>
+                      <th>Miasto</th>
+                      <th>Telefon</th>
+                      <th>Poziom wykształcenia</th>
+                      <th>Data ostatniej zmiany danych personalnych</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td> @Html.DisplayFor(m => Model.PersonalData.FirstName)</td>
+                      <td> @Html.DisplayFor(m => Model.PersonalData.LastName)</td>
+                      <td> @Html.DisplayFor(m => Model.PersonalData.Birthday)</td>
+                      <td> @Html.DisplayFor(m => Model.PersonalData.City)</td>
+                      <td> @Html.DisplayFor(m => Model.PersonalData.Phone)</td>
+                      <td> @Html.DisplayFor(m => Model.EducationLevel.Name)</td>
+                      <td> @Html.DisplayFor(m => Model.PersonalData.LastModified)</td>
+                  </tr>
+              </tbody>
+          </table>
+
+          @if (Model.User.Education.Any())
+          {
+              <h3>Edukacja</h3>
+              <table class="table table-striped table-condensed table-hover">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>Nazwa szkoły</th>
+                          <th>Kierunek</th>
+                          <th>Specjalizacja</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @foreach (var i in Model.User.Education)
+                      {
+                          <tr>
+                              <td> @Html.DisplayFor(m => i.NameOfSchool)</td>
+                              <td> @Html.DisplayFor(m => i.Major)</td>
+                              <td> @Html.DisplayFor(m => i.Minor)</td>
+                          </tr>
+                      }
+                  </tbody>
+              </table>
+          }
+
+          @if (Model.User.WorkExperience.Any())
+          {
+              <h3>Doświadczenie zawodowe</h3>
+              <table class="table table-striped table-condensed table-hover">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>Od</th>
+                          <th>Do</th>
+                          <th>Firma</th>
+                          <th>Stanowisko</th>
+                          <th>Obowiązki</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @foreach (var i in Model.User.WorkExperience)
+                      {
+                          <tr>
+                              <td> @Html.DisplayFor(m => i.DateFrom)</td>
+                              <td> @Html.DisplayFor(m => i.DateTo)</td>
+                              <td> @Html.DisplayFor(m => i.Company)</td>
+                              <td> @Html.DisplayFor(m => i.Position)</td>
+                              <td> @Html.DisplayFor(m => i.Responsibilities)</td>
+                          </tr>
+                      }
+                  </tbody>
+              </table>
+          }
+
+          @if (Model.User.UserForeignLanguages.Any())
+          {
+              <h3>Znajomość języków obcych</h3>
+              <table class="table table-striped table-condensed table-hover">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>Jezyk</th>
+                          <th>Poziom znajomości</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @foreach (var i in Model.User.UserForeignLanguages)
+                      {
+                          <tr>
+                              <td> @Html.DisplayFor(m => i.ForeignLanguages.Name)</td>
+                              <td> @Html.DisplayFor(m => i.ForeignLanguageLevels.Name)</td>
+                          </tr>
+                      }
+                  </tbody>
+              </table>
+          }
+
+          @if (Model.User.DrivingLicenses.Any())
+          {
+              <h3>Kategorie prawa jazdy</h3>
+              <table class="table table-striped table-condensed table-hover">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>Kategoria</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @foreach (var i in Model.User.DrivingLicenses)
+                      {
+                          <tr>
+                              <td> @Html.DisplayFor(m => i.Category)</td>
+                          </tr>
+                      }
+                  </tbody>
+              </table>
+          }
+
+          @if (Model.User.Courses.Any())
+          {
+              <h3>Kursy i szkolenia</h3>
+              <table class="table table-striped table-condensed table-hover">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>Od</th>
+                          <th>Do</th>
+                          <th>Typ kursu</th>
+                          <th>Rodzaj kursu</th>
+                          <th>Nazwa</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @foreach (var i in Model.User.Courses)
+                      {
+                          <tr>
+                              <td> @Html.DisplayFor(m => i.DateFrom)</td>
+                              <td> @Html.DisplayFor(m => i.DateTo)</td>
+                              <td> @Html.DisplayFor(m => i.CourseTypes.Name)</td>
+                              <td> @Html.DisplayFor(m => i.CourseKinds.Name)</td>
+                              <td> @Html.DisplayFor(m => i.Name)</td>
+                          </tr>
+                      }
+                  </tbody>
+              </table>
+          }
+
+          @if (Model.User.Skills.Any())
+          {
+              <h3>Umiejętności</h3>
+              <table class="table table-striped table-condensed table-hover">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>Nazwa</th>
+                          <th>Opis</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @foreach (var i in Model.User.Skills)
+                      {
+                          <tr>
+                              <td> @Html.DisplayFor(m => i.Name)</td>
+                              <td> @Html.DisplayFor(m => i.Description)</td>
+                          </tr>
+                      }
+                  </tbody>
+              </table>
+          }
+
+          @if (Model.User.Interests.Any())
+          {
+              <h3>Zainteresowania</h3>
+              <table class="table table-striped table-condensed table-hover">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>Nazwa</th>
+                          <th>Opis</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @foreach (var i in Model.User.Interests)
+                      {
+                          <tr>
+                              <td> @Html.DisplayFor(m => i.Name)</td>
+                              <td> @Html.DisplayFor(m => i.Description)</td>
+                          </tr>
+                      }
+                  </tbody>
+              </table>
+          }
+
+          @if (Model.User.RecruitmentProcess.Any())
+          {
+              <h3>Procesy rekrutacyjne, do których zaaplikowano</h3>
+              <table class="table table-striped table-condensed table-hover">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>Kod procesu</th>
+                          <th>Nazwa firmy</th>
+                          <th>Stanowisko</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @foreach (var i in Model.User.RecruitmentProcess)
+                      {
+                          <tr>
+                              <td> @Html.DisplayFor(m => i.ProcessCode)</td>
+                              <td> @Html.DisplayFor(m => i.Companies.Name)</td>
+                              <td> @Html.DisplayFor(m => i.Positions.Name)</td>
+                          </tr>
+                      }
+                  </tbody>
+              </table>
+          }
+      </div>

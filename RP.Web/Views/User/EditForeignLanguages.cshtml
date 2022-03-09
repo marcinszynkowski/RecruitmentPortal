@@ -1,0 +1,45 @@
+﻿@model RP.Entities.UserModule.ViewModels.ForeignLanguagesViewModel
+@{
+    ViewBag.Title = "Języki Obce";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Znajomość języków obcych</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="form-horizontal">
+
+    <hr />
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.DropDownListFor(model => model.selectedId, new SelectList(Model.langUserLangs, "Id", "Name"), "Wybierz element do edycji", new { @class = "form-control" })
+    </div>
+
+    <button name="action" value="edit">Edit</button>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.DropDownListFor(model => model.ForeginLanguageId, new SelectList(Model.langList, "Id", "Name"), "Wybierz język", new { @class = "form-control" })
+    </div>
+
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.DropDownListFor(model => model.ForeignLangauegeLevelId, new SelectList(Model.langLevelsList, "Id", "Name"), "Wybierz poziom znajomości języka", new { @class = "form-control" })
+    </div>
+</div>
+
+    <button name="action" value="add">Dodaj</button>
+    <button name="action" value="delete">Usuń</button>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+
+}

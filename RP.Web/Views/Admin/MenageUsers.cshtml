@@ -1,0 +1,52 @@
+﻿@model IEnumerable<RP.Entities.Account.User>
+@{
+    ViewBag.Title = "MenageUsers";
+}
+
+<h2 class="text-center">Zarządzanie użytkownikami</h2>
+
+<div>
+    @Html.ActionLink("Dodanie użytkownika", "AddUser", "Admin", null, new { @class = "btn btn-dark" })
+</div><br />
+
+<div>
+    @Html.ActionLink("Wyślij wiadomość do wszystkich użytkowników", "SendEmailUsers", "Admin", null, new { @class = "btn btn-dark" })
+</div><br />
+
+<div>
+    <table class="table table-striped table-condensed table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Błędne logowania</th>
+                <th>Blokada konta</th>
+                <th>Ostatnie logowanie</th>
+                <th>Ostatnia zmiana hasła</th>
+                <th>Rola</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(m => i.Id)</td>
+                    <td> @Html.DisplayFor(m => i.Email)</td>
+                    <td> @Html.DisplayFor(m => i.AccessFailedCount)</td>
+                    <td> @Html.DisplayFor(m => i.LockoutEnabled)</td>
+                    <td> @Html.DisplayFor(m => i.LastLogin)</td>
+                    <td> @Html.DisplayFor(m => i.PasswordLastModified)</td>
+                    <td> @Html.DisplayFor(m => i.Roles.Name)</td>
+                    <td>@Html.ActionLink("Więcej informacji", "MoreInfoUser", "Admin", new { id = i.Id }, new { @class = "btn btn-dark" })</td>
+                    <td>@Html.ActionLink("Wyślij wiadomość", "SendEmailUser", "Admin", new { email = i.Email }, new { @class = "btn btn-dark" })</td>
+                    <td>@Html.ActionLink("Edytuj", "EditUser", "Admin", new { id = i.Id }, new { @class = "btn btn-dark" })</td>
+                    <td>@Html.ActionLink("Usuń", "DeleteUser", "Admin", new { id = i.Id }, new { @class = "btn btn-dark" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<RP.Entities.User.DrivingLicense>
+@{
+    ViewBag.Title = "MenageDrivingLicenses";
+}
+<h2 class="text-center">Zarządzanie kategoriami prawa jazdy</h2>
+
+<div>
+    @Html.ActionLink("Dodanie kategorii", "AddDrivingLicense", "Admin", null, new { @class = "btn btn-dark" })
+</div><br />
+
+<div>
+    <table class="table table-striped table-condensed table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Kategoria</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(m => i.Id)</td>
+                    <td> @Html.DisplayFor(m => i.Category)</td>
+                    <td>@Html.ActionLink("Edytuj", "EditDrivingLicense", "Admin", new {  id = i.Id}, new { @class = "btn btn-dark" })</td>
+                    <td>@Html.ActionLink("Usuń", "DeleteDrivingLicense", "Admin", new { id = i.Id }, new { @class = "btn btn-dark" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

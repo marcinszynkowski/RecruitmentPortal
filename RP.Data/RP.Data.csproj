@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E2417A9-011E-4CCA-A8D3-55D9C1068E87}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>RP.Data</RootNamespace>
+    <AssemblyName>RP.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.CodeDom, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.4.5.0\lib\net461\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RP.Entities\RP.Entities.csproj">
+      <Project>{05ef2878-9cab-4cde-b2f3-fe4de5e9032d}</Project>
+      <Name>RP.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\Context.cs" />
+    <Compile Include="Migrations\201802191232346_InitialModel.cs" />
+    <Compile Include="Migrations\201802191232346_InitialModel.Designer.cs">
+      <DependentUpon>201802191232346_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802191233489_PopulateRolesTable.cs" />
+    <Compile Include="Migrations\201802191233489_PopulateRolesTable.Designer.cs">
+      <DependentUpon>201802191233489_PopulateRolesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802191239360_PopulateCourseTypesTable.cs" />
+    <Compile Include="Migrations\201802191239360_PopulateCourseTypesTable.Designer.cs">
+      <DependentUpon>201802191239360_PopulateCourseTypesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802191248440_ChangeTablesNames.cs" />
+    <Compile Include="Migrations\201802191248440_ChangeTablesNames.Designer.cs">
+      <DependentUpon>201802191248440_ChangeTablesNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802191250092_PopulateDrivingLicensesTable.cs" />
+    <Compile Include="Migrations\201802191250092_PopulateDrivingLicensesTable.Designer.cs">
+      <DependentUpon>201802191250092_PopulateDrivingLicensesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802191254176_PopulateForeignLanguageLevelsTable.cs" />
+    <Compile Include="Migrations\201802191254176_PopulateForeignLanguageLevelsTable.Designer.cs">
+      <DependentUpon>201802191254176_PopulateForeignLanguageLevelsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802191256160_PopulateForeignLanguagesTable.cs" />
+    <Compile Include="Migrations\201802191256160_PopulateForeignLanguagesTable.Designer.cs">
+      <DependentUpon>201802191256160_PopulateForeignLanguagesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802191259291_CreateAdminAndUserInUserTable.cs" />
+    <Compile Include="Migrations\201802191259291_CreateAdminAndUserInUserTable.Designer.cs">
+      <DependentUpon>201802191259291_CreateAdminAndUserInUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803081154352_PopulateFormOfEmploymentTable.cs" />
+    <Compile Include="Migrations\201803081154352_PopulateFormOfEmploymentTable.Designer.cs">
+      <DependentUpon>201803081154352_PopulateFormOfEmploymentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803081202312_PopulatePaymentTypesTable.cs" />
+    <Compile Include="Migrations\201803081202312_PopulatePaymentTypesTable.Designer.cs">
+      <DependentUpon>201803081202312_PopulatePaymentTypesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803081210340_PopulateProcessStatusTable.cs" />
+    <Compile Include="Migrations\201803081210340_PopulateProcessStatusTable.Designer.cs">
+      <DependentUpon>201803081210340_PopulateProcessStatusTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803090926341_AddCompanyColumnAndRemoveDateColumnsRPTable.cs" />
+    <Compile Include="Migrations\201803090926341_AddCompanyColumnAndRemoveDateColumnsRPTable.Designer.cs">
+      <DependentUpon>201803090926341_AddCompanyColumnAndRemoveDateColumnsRPTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803231102141_DeletePaymentToTableInRecruitmentProcess.cs" />
+    <Compile Include="Migrations\201803231102141_DeletePaymentToTableInRecruitmentProcess.Designer.cs">
+      <DependentUpon>201803231102141_DeletePaymentToTableInRecruitmentProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806071226118_AddCompanyColumnWorkExperienceTable.cs" />
+    <Compile Include="Migrations\201806071226118_AddCompanyColumnWorkExperienceTable.Designer.cs">
+      <DependentUpon>201806071226118_AddCompanyColumnWorkExperienceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131458273_DeleteAdditionalInformationTable.cs" />
+    <Compile Include="Migrations\201806131458273_DeleteAdditionalInformationTable.Designer.cs">
+      <DependentUpon>201806131458273_DeleteAdditionalInformationTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131526385_AddDataAnnotationsInCourseTable.cs" />
+    <Compile Include="Migrations\201806131526385_AddDataAnnotationsInCourseTable.Designer.cs">
+      <DependentUpon>201806131526385_AddDataAnnotationsInCourseTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131528405_AddDataAnnotationsInCourseKindTable.cs" />
+    <Compile Include="Migrations\201806131528405_AddDataAnnotationsInCourseKindTable.Designer.cs">
+      <DependentUpon>201806131528405_AddDataAnnotationsInCourseKindTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131532512_AddDataAnnotationsInCourseTypeTable.cs" />
+    <Compile Include="Migrations\201806131532512_AddDataAnnotationsInCourseTypeTable.Designer.cs">
+      <DependentUpon>201806131532512_AddDataAnnotationsInCourseTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131534260_AddDataAnnotationsInUserForeignLanguagesLTable.cs" />
+    <Compile Include="Migrations\201806131534260_AddDataAnnotationsInUserForeignLanguagesLTable.Designer.cs">
+      <DependentUpon>201806131534260_AddDataAnnotationsInUserForeignLanguagesLTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131536209_AddDataAnnotationsInForeignLanguagesTable.cs" />
+    <Compile Include="Migrations\201806131536209_AddDataAnnotationsInForeignLanguagesTable.Designer.cs">
+      <DependentUpon>201806131536209_AddDataAnnotationsInForeignLanguagesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131537135_AddDataAnnotationsInForeignLanguageLevelsTable.cs" />
+    <Compile Include="Migrations\201806131537135_AddDataAnnotationsInForeignLanguageLevelsTable.Designer.cs">
+      <DependentUpon>201806131537135_AddDataAnnotationsInForeignLanguageLevelsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131538469_AddDataAnnotationsInRolesTable.cs" />
+    <Compile Include="Migrations\201806131538469_AddDataAnnotationsInRolesTable.Designer.cs">
+      <DependentUpon>201806131538469_AddDataAnnotationsInRolesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131539595_AddDataAnnotationsInSkillsTable.cs" />
+    <Compile Include="Migrations\201806131539595_AddDataAnnotationsInSkillsTable.Designer.cs">
+      <DependentUpon>201806131539595_AddDataAnnotationsInSkillsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131543295_AddDataAnnotationsInUsersTable.cs" />
+    <Compile Include="Migrations\201806131543295_AddDataAnnotationsInUsersTable.Designer.cs">
+      <DependentUpon>201806131543295_AddDataAnnotationsInUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131545035_AddDataAnnotationsInInterestsTable.cs" />
+    <Compile Include="Migrations\201806131545035_AddDataAnnotationsInInterestsTable.Designer.cs">
+      <DependentUpon>201806131545035_AddDataAnnotationsInInterestsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131546408_AddDataAnnotationsInDrivingLicensesTable.cs" />
+    <Compile Include="Migrations\201806131546408_AddDataAnnotationsInDrivingLicensesTable.Designer.cs">
+      <DependentUpon>201806131546408_AddDataAnnotationsInDrivingLicensesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131548279_AddDataAnnotationsInDocumentsTable.cs" />
+    <Compile Include="Migrations\201806131548279_AddDataAnnotationsInDocumentsTable.Designer.cs">
+      <DependentUpon>201806131548279_AddDataAnnotationsInDocumentsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131551477_AddDataAnnotationsInPaymentTypesTable.cs" />
+    <Compile Include="Migrations\201806131551477_AddDataAnnotationsInPaymentTypesTable.Designer.cs">
+      <DependentUpon>201806131551477_AddDataAnnotationsInPaymentTypesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131553450_AddDataAnnotationsInFormOfEmploymentTable.cs" />
+    <Compile Include="Migrations\201806131553450_AddDataAnnotationsInFormOfEmploymentTable.Designer.cs">
+      <DependentUpon>201806131553450_AddDataAnnotationsInFormOfEmploymentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131554463_AddDataAnnotationsInProcessStatusTable.cs" />
+    <Compile Include="Migrations\201806131554463_AddDataAnnotationsInProcessStatusTable.Designer.cs">
+      <DependentUpon>201806131554463_AddDataAnnotationsInProcessStatusTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131558371_AddDataAnnotationsInPersonalDataTable.cs" />
+    <Compile Include="Migrations\201806131558371_AddDataAnnotationsInPersonalDataTable.Designer.cs">
+      <DependentUpon>201806131558371_AddDataAnnotationsInPersonalDataTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131600219_AddDataAnnotationsInSurveyAnswerTable.cs" />
+    <Compile Include="Migrations\201806131600219_AddDataAnnotationsInSurveyAnswerTable.Designer.cs">
+      <DependentUpon>201806131600219_AddDataAnnotationsInSurveyAnswerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131601211_AddDataAnnotationsInSurveyQuestionsTable.cs" />
+    <Compile Include="Migrations\201806131601211_AddDataAnnotationsInSurveyQuestionsTable.Designer.cs">
+      <DependentUpon>201806131601211_AddDataAnnotationsInSurveyQuestionsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131603446_AddDataAnnotationsInWorkExperienceTable.cs" />
+    <Compile Include="Migrations\201806131603446_AddDataAnnotationsInWorkExperienceTable.Designer.cs">
+      <DependentUpon>201806131603446_AddDataAnnotationsInWorkExperienceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131607474_AddDataAnnotationsInEducationTable.cs" />
+    <Compile Include="Migrations\201806131607474_AddDataAnnotationsInEducationTable.Designer.cs">
+      <DependentUpon>201806131607474_AddDataAnnotationsInEducationTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131611295_AddDataAnnotationsInRecruitmentProcessesTable.cs" />
+    <Compile Include="Migrations\201806131611295_AddDataAnnotationsInRecruitmentProcessesTable.Designer.cs">
+      <DependentUpon>201806131611295_AddDataAnnotationsInRecruitmentProcessesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131617134_AddDataAnnotationsInEducationLevelsTable.cs" />
+    <Compile Include="Migrations\201806131617134_AddDataAnnotationsInEducationLevelsTable.Designer.cs">
+      <DependentUpon>201806131617134_AddDataAnnotationsInEducationLevelsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809220956012_AddTasksToRecruitmentProcessTable.cs" />
+    <Compile Include="Migrations\201809220956012_AddTasksToRecruitmentProcessTable.Designer.cs">
+      <DependentUpon>201809220956012_AddTasksToRecruitmentProcessTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809221120233_DeleteDocumentTable.cs" />
+    <Compile Include="Migrations\201809221120233_DeleteDocumentTable.Designer.cs">
+      <DependentUpon>201809221120233_DeleteDocumentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810210209507_AddVirtualCVTable.cs" />
+    <Compile Include="Migrations\201810210209507_AddVirtualCVTable.Designer.cs">
+      <DependentUpon>201810210209507_AddVirtualCVTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810232346465_TableAdnotationToNotPluralTableNames.cs" />
+    <Compile Include="Migrations\201810232346465_TableAdnotationToNotPluralTableNames.Designer.cs">
+      <DependentUpon>201810232346465_TableAdnotationToNotPluralTableNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810232357010_TableAdnotationToNotPluralWorkExperenceTableName.cs" />
+    <Compile Include="Migrations\201810232357010_TableAdnotationToNotPluralWorkExperenceTableName.Designer.cs">
+      <DependentUpon>201810232357010_TableAdnotationToNotPluralWorkExperenceTableName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810282319122_AddNewTables.cs" />
+    <Compile Include="Migrations\201810282319122_AddNewTables.Designer.cs">
+      <DependentUpon>201810282319122_AddNewTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810282324168_PopulateCityTable.cs" />
+    <Compile Include="Migrations\201810282324168_PopulateCityTable.Designer.cs">
+      <DependentUpon>201810282324168_PopulateCityTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810282328545_PopulateCompanyTable.cs" />
+    <Compile Include="Migrations\201810282328545_PopulateCompanyTable.Designer.cs">
+      <DependentUpon>201810282328545_PopulateCompanyTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810282335221_PopulatePositionTable.cs" />
+    <Compile Include="Migrations\201810282335221_PopulatePositionTable.Designer.cs">
+      <DependentUpon>201810282335221_PopulatePositionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810282338420_PopulateSurveyQuestionTypeTable.cs" />
+    <Compile Include="Migrations\201810282338420_PopulateSurveyQuestionTypeTable.Designer.cs">
+      <DependentUpon>201810282338420_PopulateSurveyQuestionTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810301400450_DeleteVirtualCVTableMoveAdressToUserTable.cs" />
+    <Compile Include="Migrations\201810301400450_DeleteVirtualCVTableMoveAdressToUserTable.Designer.cs">
+      <DependentUpon>201810301400450_DeleteVirtualCVTableMoveAdressToUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810301408229_AddVirtualCVAdressToUser.cs" />
+    <Compile Include="Migrations\201810301408229_AddVirtualCVAdressToUser.Designer.cs">
+      <DependentUpon>201810301408229_AddVirtualCVAdressToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810301424166_AddPersonalDataForCreatedUsers.cs" />
+    <Compile Include="Migrations\201810301424166_AddPersonalDataForCreatedUsers.Designer.cs">
+      <DependentUpon>201810301424166_AddPersonalDataForCreatedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201802191232346_InitialModel.resx">
+      <DependentUpon>201802191232346_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191233489_PopulateRolesTable.resx">
+      <DependentUpon>201802191233489_PopulateRolesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191239360_PopulateCourseTypesTable.resx">
+      <DependentUpon>201802191239360_PopulateCourseTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191248440_ChangeTablesNames.resx">
+      <DependentUpon>201802191248440_ChangeTablesNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191250092_PopulateDrivingLicensesTable.resx">
+      <DependentUpon>201802191250092_PopulateDrivingLicensesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191254176_PopulateForeignLanguageLevelsTable.resx">
+      <DependentUpon>201802191254176_PopulateForeignLanguageLevelsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191256160_PopulateForeignLanguagesTable.resx">
+      <DependentUpon>201802191256160_PopulateForeignLanguagesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191259291_CreateAdminAndUserInUserTable.resx">
+      <DependentUpon>201802191259291_CreateAdminAndUserInUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803081154352_PopulateFormOfEmploymentTable.resx">
+      <DependentUpon>201803081154352_PopulateFormOfEmploymentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803081202312_PopulatePaymentTypesTable.resx">
+      <DependentUpon>201803081202312_PopulatePaymentTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803081210340_PopulateProcessStatusTable.resx">
+      <DependentUpon>201803081210340_PopulateProcessStatusTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803090926341_AddCompanyColumnAndRemoveDateColumnsRPTable.resx">
+      <DependentUpon>201803090926341_AddCompanyColumnAndRemoveDateColumnsRPTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803231102141_DeletePaymentToTableInRecruitmentProcess.resx">
+      <DependentUpon>201803231102141_DeletePaymentToTableInRecruitmentProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806071226118_AddCompanyColumnWorkExperienceTable.resx">
+      <DependentUpon>201806071226118_AddCompanyColumnWorkExperienceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131458273_DeleteAdditionalInformationTable.resx">
+      <DependentUpon>201806131458273_DeleteAdditionalInformationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131526385_AddDataAnnotationsInCourseTable.resx">
+      <DependentUpon>201806131526385_AddDataAnnotationsInCourseTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131528405_AddDataAnnotationsInCourseKindTable.resx">
+      <DependentUpon>201806131528405_AddDataAnnotationsInCourseKindTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131532512_AddDataAnnotationsInCourseTypeTable.resx">
+      <DependentUpon>201806131532512_AddDataAnnotationsInCourseTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131534260_AddDataAnnotationsInUserForeignLanguagesLTable.resx">
+      <DependentUpon>201806131534260_AddDataAnnotationsInUserForeignLanguagesLTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131536209_AddDataAnnotationsInForeignLanguagesTable.resx">
+      <DependentUpon>201806131536209_AddDataAnnotationsInForeignLanguagesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131537135_AddDataAnnotationsInForeignLanguageLevelsTable.resx">
+      <DependentUpon>201806131537135_AddDataAnnotationsInForeignLanguageLevelsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131538469_AddDataAnnotationsInRolesTable.resx">
+      <DependentUpon>201806131538469_AddDataAnnotationsInRolesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131539595_AddDataAnnotationsInSkillsTable.resx">
+      <DependentUpon>201806131539595_AddDataAnnotationsInSkillsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131543295_AddDataAnnotationsInUsersTable.resx">
+      <DependentUpon>201806131543295_AddDataAnnotationsInUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131545035_AddDataAnnotationsInInterestsTable.resx">
+      <DependentUpon>201806131545035_AddDataAnnotationsInInterestsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131546408_AddDataAnnotationsInDrivingLicensesTable.resx">
+      <DependentUpon>201806131546408_AddDataAnnotationsInDrivingLicensesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131548279_AddDataAnnotationsInDocumentsTable.resx">
+      <DependentUpon>201806131548279_AddDataAnnotationsInDocumentsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131551477_AddDataAnnotationsInPaymentTypesTable.resx">
+      <DependentUpon>201806131551477_AddDataAnnotationsInPaymentTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131553450_AddDataAnnotationsInFormOfEmploymentTable.resx">
+      <DependentUpon>201806131553450_AddDataAnnotationsInFormOfEmploymentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131554463_AddDataAnnotationsInProcessStatusTable.resx">
+      <DependentUpon>201806131554463_AddDataAnnotationsInProcessStatusTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131558371_AddDataAnnotationsInPersonalDataTable.resx">
+      <DependentUpon>201806131558371_AddDataAnnotationsInPersonalDataTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131600219_AddDataAnnotationsInSurveyAnswerTable.resx">
+      <DependentUpon>201806131600219_AddDataAnnotationsInSurveyAnswerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131601211_AddDataAnnotationsInSurveyQuestionsTable.resx">
+      <DependentUpon>201806131601211_AddDataAnnotationsInSurveyQuestionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131603446_AddDataAnnotationsInWorkExperienceTable.resx">
+      <DependentUpon>201806131603446_AddDataAnnotationsInWorkExperienceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131607474_AddDataAnnotationsInEducationTable.resx">
+      <DependentUpon>201806131607474_AddDataAnnotationsInEducationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131611295_AddDataAnnotationsInRecruitmentProcessesTable.resx">
+      <DependentUpon>201806131611295_AddDataAnnotationsInRecruitmentProcessesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131617134_AddDataAnnotationsInEducationLevelsTable.resx">
+      <DependentUpon>201806131617134_AddDataAnnotationsInEducationLevelsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809220956012_AddTasksToRecruitmentProcessTable.resx">
+      <DependentUpon>201809220956012_AddTasksToRecruitmentProcessTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809221120233_DeleteDocumentTable.resx">
+      <DependentUpon>201809221120233_DeleteDocumentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810210209507_AddVirtualCVTable.resx">
+      <DependentUpon>201810210209507_AddVirtualCVTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810232346465_TableAdnotationToNotPluralTableNames.resx">
+      <DependentUpon>201810232346465_TableAdnotationToNotPluralTableNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810232357010_TableAdnotationToNotPluralWorkExperenceTableName.resx">
+      <DependentUpon>201810232357010_TableAdnotationToNotPluralWorkExperenceTableName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810282319122_AddNewTables.resx">
+      <DependentUpon>201810282319122_AddNewTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810282324168_PopulateCityTable.resx">
+      <DependentUpon>201810282324168_PopulateCityTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810282328545_PopulateCompanyTable.resx">
+      <DependentUpon>201810282328545_PopulateCompanyTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810282335221_PopulatePositionTable.resx">
+      <DependentUpon>201810282335221_PopulatePositionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810282338420_PopulateSurveyQuestionTypeTable.resx">
+      <DependentUpon>201810282338420_PopulateSurveyQuestionTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810301400450_DeleteVirtualCVTableMoveAdressToUserTable.resx">
+      <DependentUpon>201810301400450_DeleteVirtualCVTableMoveAdressToUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810301408229_AddVirtualCVAdressToUser.resx">
+      <DependentUpon>201810301408229_AddVirtualCVAdressToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810301424166_AddPersonalDataForCreatedUsers.resx">
+      <DependentUpon>201810301424166_AddPersonalDataForCreatedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

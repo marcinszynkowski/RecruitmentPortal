@@ -1,0 +1,49 @@
+﻿@model RP.Entities.AdminModule.ViewModels.EditUserViewModel
+
+@{
+    ViewBag.Title = "EditUser";
+}
+
+<h2 class="text-center">Edytowanie danych użytkownika</h2>
+
+<div>
+    @Html.ActionLink("Powrót", "MenageUsers", "Admin", null, new { @class = "btn btn-dark" })
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Email)
+    <div class="form-group">
+        <div class="col-md-10">
+           Login: @Html.DisplayFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LockoutEnabled, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.LockoutEnabled, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LockoutEnabled, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RoleId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.RoleId, ViewBag.Roles as List<SelectListItem>)
+            @Html.ValidationMessageFor(model => model.RoleId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Edytuj" class="btn btn-dark" />
+        </div>
+    </div>
+</div>
+}

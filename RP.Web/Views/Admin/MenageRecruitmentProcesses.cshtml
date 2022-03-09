@@ -1,0 +1,61 @@
+﻿@model IEnumerable<RP.Entities.Recruitment.RecruitmentProcess>
+
+@{
+    ViewBag.Title = "MenageRecruitmentProcesses";
+}
+
+<h2 class="text-center">Zarządzanie procesami rekrutacyjnymi</h2>
+
+<div>
+    @Html.ActionLink("Dodanie procesu", "AddRecruitmentProcess", "Admin", null, new { @class = "btn btn-dark" })
+</div><br/>
+
+<div>
+    <table class="table table-striped table-condensed table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Kod procesu</th>
+                <th>Firma</th>
+                <th>Miasto</th>
+                <th>Stanowisko</th>
+                <th>Wymagania</th>
+                <th>Oferta</th>
+                <th>Forma zatrudnienia</th>
+                <th>Rodzaj wynagrodzenia</th>
+                <th>Wynagrodzenie</th>
+                <th>Email</th>
+                <th>Telefon</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+            <tr>
+                <td> @Html.DisplayFor(m => i.Id)</td>
+                <td> @Html.DisplayFor(m => i.ProcessCode)</td>
+                <td> @Html.DisplayFor(m => i.Companies.Name)</td>
+                <td> @Html.DisplayFor(m => i.Cities.Name)</td>
+                <td> @Html.DisplayFor(m => i.Positions.Name)</td>
+                <td> @Html.DisplayFor(m => i.Requirements)</td>
+                <td> @Html.DisplayFor(m => i.Offer)</td>
+                <td> @Html.DisplayFor(m => i.FormOfEmployments.Name)</td>
+                <td> @Html.DisplayFor(m => i.PaymentTypes.Name)</td>
+                <td> @Html.DisplayFor(m => i.Payment)</td>
+                <td> @Html.DisplayFor(m => i.Email)</td>
+                <td> @Html.DisplayFor(m => i.Phone)</td>
+                <td> @Html.DisplayFor(m => i.ProcessStatus.Name)</td>
+                <td>@Html.ActionLink("Lista aplikujących", "AplicantsList", "Admin", new { id = i.Id }, new { @class = "btn btn-dark" })</td>
+                <td>@Html.ActionLink("Ankieta", "MenageSurveyQuestions", "Admin", new { recruitmentProcessId = i.Id }, new { @class = "btn btn-dark" })</td>
+                <td>@Html.ActionLink("Edytuj", "EditRecruitmentProcess", "Admin", new { id = i.Id }, new { @class = "btn btn-dark" })</td>
+                <td>@Html.ActionLink("Usuń", "DeleteRecruitmentProcess", "Admin", new { id = i.Id }, new { @class = "btn btn-dark" })</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

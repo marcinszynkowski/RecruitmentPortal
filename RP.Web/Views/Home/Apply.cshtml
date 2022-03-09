@@ -1,0 +1,141 @@
+﻿@model RP.Entities.RecruitmentModule.ViewModels.ApplyViewModel
+@{
+    /**/
+
+    ViewBag.Title = "Questions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="text-center">Aplikowanie do procesu rekrutacyjnego</h2>
+
+<div>
+    @Html.ActionLink("Powrót", "Index", "Home", null, new { @class = "btn btn-dark" })
+</div>
+
+@using RP.RecruitmentModule.Interfaces
+@using RP.Entities.Recruitment
+@{
+    var recruitmentProcessService = DependencyResolver.Current.GetService<IRecruitmentProcessService>();
+    RecruitmentProcess recruitmentProcess = recruitmentProcessService.GetRecruitmentProcessById(Model.RecruitmentProcessId);
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <div class="col-md-10">
+                Firma: @Html.DisplayFor(model => recruitmentProcess.Companies.Name)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                Stanowisko: @Html.DisplayFor(model => recruitmentProcess.Positions.Name)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                Miasto: @Html.DisplayFor(model => recruitmentProcess.Cities.Name)
+            </div>
+        </div>
+    </div>
+}
+@using (Html.BeginForm("Apply", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        <h3 class="text-center">Ankieta</h3>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.RecruitmentProcessId)
+        @Html.HiddenFor(model => model.UserId)
+        @for (var i = 0; i < Model.SurveyOpenQuestionViewModelList.Count; i++)
+        {
+
+            <div>
+                @Html.HiddenFor(model => model.SurveyOpenQuestionViewModelList[i].SurveyQuestionId)
+                @Html.HiddenFor(model => model.SurveyOpenQuestionViewModelList[i].Question)
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.SurveyOpenQuestionViewModelList[i].Question, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SurveyOpenQuestionViewModelList[i].Answer, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+        }
+        @for (var i = 0; i < Model.SurveyClosedQuestionOneAnswerViewModelList.Count; i++)
+        {
+
+            <div>
+                @Html.HiddenFor(model => model.SurveyClosedQuestionOneAnswerViewModelList[i].SurveyQuestionId)
+                @Html.HiddenFor(model => model.SurveyClosedQuestionOneAnswerViewModelList[i].Question)
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.SurveyClosedQuestionOneAnswerViewModelList[i].Question, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                @for (var j = 0; j < Model.SurveyClosedQuestionOneAnswerViewModelList[i].Answers.Count; j++)
+                {
+                    @Html.HiddenFor(model => model.SurveyClosedQuestionOneAnswerViewModelList[i].Answers[j].AnswerId)
+                    @Html.HiddenFor(model => model.SurveyClosedQuestionOneAnswerViewModelList[i].Answers[j].Answer)
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.RadioButtonFor(model => model.SurveyClosedQuestionOneAnswerViewModelList[i].SelectedAnswer, Model.SurveyClosedQuestionOneAnswerViewModelList[i].Answers[j].AnswerId, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.DisplayFor(model => model.SurveyClosedQuestionOneAnswerViewModelList[i].Answers[j].Answer, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        @for (var i = 0; i < Model.SurveyClosedQuestionMultipleAnswersModelList.Count; i++)
+        {
+
+            <div>
+                @Html.HiddenFor(model => model.SurveyClosedQuestionMultipleAnswersModelList[i].SurveyQuestionId)
+                @Html.HiddenFor(model => model.SurveyClosedQuestionMultipleAnswersModelList[i].Question)
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.SurveyClosedQuestionMultipleAnswersModelList[i].Question, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                @for (var j = 0; j < Model.SurveyClosedQuestionMultipleAnswersModelList[i].Answers.Count; j++)
+                {
+                    @Html.HiddenFor(model => model.SurveyClosedQuestionMultipleAnswersModelList[i].Answers[j].AnswerId)
+                    @Html.HiddenFor(model => model.SurveyClosedQuestionMultipleAnswersModelList[i].Answers[j].Answer)
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.CheckBoxFor(model => model.SurveyClosedQuestionMultipleAnswersModelList[i].Answers[j].IsCheked, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.DisplayFor(model => model.SurveyClosedQuestionMultipleAnswersModelList[i].Answers[j].Answer, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+        <hr />
+        <h3 class="text-center">Załącz pliki</h3>
+        <div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.LabelFor(model => model.ApplyFilesViewModel.CV, new { @class = "col-md-2 control-label" })
+                    @Html.TextBoxFor(model => model.ApplyFilesViewModel.CV, new { @type = "file" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.LabelFor(model => model.ApplyFilesViewModel.MotivationLetter, new { @class = "col-md-2 control-label" })
+                    @Html.TextBoxFor(model => model.ApplyFilesViewModel.MotivationLetter, new { @type = "file" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Aplikuj" class="btn btn-dark" />
+            </div>
+        </div>
+    </div>
+}

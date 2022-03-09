@@ -1,0 +1,111 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title - Portal Rekrutacyjny</title>
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>*@
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="collapse navbar-collapse navbar-brand" id="navbarSupportedContent">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                            @Html.ActionLink("Strona główna", "Index", "Home", new { area = "" }, new { @class = "nav-link text-light" })
+                        </li>
+                        @if (Request.IsAuthenticated)
+    {
+        if (Roles.IsUserInRole("Administrator"))
+        {
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Procesy rekrutacyjne
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @Html.ActionLink("Importuj procesy rekrutacyjne z ERP LN", "ImportRecruitmentProcessesFromErpLN", "Admin", null, new { @class = "dropdown-item" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Zarządzanie procesami rekrutacyjnymi", "MenageRecruitmentProcesses", "Admin", null, new { @class = "dropdown-item" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Zarządzanie firmami", "MenageCompanies", "Admin", null, new { @class = "dropdown-item" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Zarządzanie miastami", "MenageCities", "Admin", null, new { @class = "dropdown-item" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Zarządzanie stanowiskami", "MenagePositions", "Admin", null, new { @class = "dropdown-item" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Zarządzanie formami zatrudnienia", "MenageFormOfEmployment", "Admin", null, new { @class = "dropdown-item" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Zarządzanie rodzajami wynagrodzenia", "MenagePaymentTypes", "Admin", null, new { @class = "dropdown-item" })
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Użytkownicy
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @Html.ActionLink("Eksportuj dane aplikujących użytkownków do ERP LN", "ExportApplicantsDataToErpLn", "Admin", null, new { @class = "dropdown-item" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Zarządzanie użytkownikami", "MenageUsers", "Admin", null, new { @class = "dropdown-item" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Zarządzanie typami kursów", "MenageCourseTypes", "Admin", null, new { @class = "dropdown-item" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Zarządzanie rodzajami kursów", "MenageCourseKinds", "Admin", null, new { @class = "dropdown-item" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Zarządzanie językami obcymi", "MenageForeignLanguages", "Admin", null, new { @class = "dropdown-item" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Zarządzanie poziomami znajomości języka obcego", "MenageForeignLanguageLevels", "Admin", null, new { @class = "dropdown-item" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Zarządzanie kategoriami prawa jazdy", "MenageDrivingLicenses", "Admin", null, new { @class = "dropdown-item" })
+                        </div>
+                    </li>
+}
+else if (Roles.IsUserInRole("Użytkownik"))
+{
+                    <li class="nav-item ">
+                        @Html.ActionLink(@User.Identity.Name, "EditProfile", "User", new { area = "" }, new { @class = "nav-link text-light" })
+
+                    </li>
+                    <li class="nav-item">
+                    @Html.ActionLink("Oferty", "Index", "User", new { area = "" }, new { @class = "nav-link text-light" })
+                    </li>
+}
+                    <li class="nav-item ">
+                        @Html.ActionLink("Wyloguj", "SignOut", "Account", new { area = "" }, new { @class = "nav-link text-light" })
+                    </li>
+}
+else
+{
+                    <li class="nav-item ">
+                        @Html.ActionLink("Logowanie", "SignIn", "Account", new { area = "" }, new { @class = "nav-link text-light" })
+                    </li>
+
+                    <li class="nav-item ">
+                        @Html.ActionLink("Rejestracja", "SignUp", "Account", new { area = "" }, new { @class = "nav-link text-light" })
+                    </li>
+}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid body-content">
+        @RenderBody()
+
+        <hr />
+        <footer>
+            <p class="text-center">&copy; @DateTime.Now.Year - Portal Rekrutacyjny</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/popper")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

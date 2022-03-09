@@ -1,0 +1,225 @@
+﻿@model RP.Entities.RecruitmentModule.ViewModels.FilterViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="column left">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @if (Model.CompaniesViewModelList.Count > 0)
+                {
+                <div>
+                    <fieldset>
+                        <legend>Firma: </legend>
+                        @for (var i = 0; i < Model.CompaniesViewModelList.Count; i++)
+                        {
+                            <div>
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.CompaniesViewModelList[i].Company, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.HiddenFor(model => model.CompaniesViewModelList[i].Company)
+                                        @Html.CheckBoxFor(model => model.CompaniesViewModelList[i].IsCompanyCheked) @Model.RecruitmentProcessViewModelList.Where(rp => rp.Company == Model.CompaniesViewModelList[i].Company).ToList().Count
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </fieldset>
+                    <fieldset>
+                        <legend>Stanowisko: </legend>
+                        @for (var i = 0; i < Model.PositionsViewModelList.Count; i++)
+                        {
+                            <div>
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.PositionsViewModelList[i].Position, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.HiddenFor(model => model.PositionsViewModelList[i].Position)
+                                        @Html.CheckBoxFor(model => model.PositionsViewModelList[i].IsPositionCheked) @Model.RecruitmentProcessViewModelList.Where(rp => rp.Position == Model.PositionsViewModelList[i].Position).ToList().Count
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </fieldset>
+                    <fieldset>
+                        <legend>Miasto: </legend>
+                        @for (var i = 0; i < Model.CitiesViewModelList.Count; i++)
+                        {
+                            <div>
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.CitiesViewModelList[i].City, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.HiddenFor(model => model.CitiesViewModelList[i].City)
+                                        @Html.CheckBoxFor(model => model.CitiesViewModelList[i].IsCityCheked) @Model.RecruitmentProcessViewModelList.Where(rp => rp.City == Model.CitiesViewModelList[i].City).ToList().Count
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </fieldset>
+                    <fieldset>
+                        <legend>Forma zatrudnienia: </legend>
+                        @for (var i = 0; i < Model.FormOfEmploymentViewModelList.Count; i++)
+                        {
+                            <div>
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.FormOfEmploymentViewModelList[i].FormOfEmployment, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.HiddenFor(model => model.FormOfEmploymentViewModelList[i].FormOfEmployment)
+                                        @Html.CheckBoxFor(model => model.FormOfEmploymentViewModelList[i].IsFormOfEmploymentCheked) @Model.RecruitmentProcessViewModelList.Where(rp => rp.FormOfEmployment == Model.FormOfEmploymentViewModelList[i].FormOfEmployment).ToList().Count
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </fieldset>
+                    <fieldset>
+                        <legend>Rodzaj wynagrodzenia: </legend>
+                        @for (var i = 0; i < Model.PaymentTypesViewModelList.Count; i++)
+                        {
+                            <div>
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.PaymentTypesViewModelList[i].PaymentType, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.HiddenFor(model => model.PaymentTypesViewModelList[i].PaymentType)
+                                        @Html.CheckBoxFor(model => model.PaymentTypesViewModelList[i].IsPaymentTypeCheked) @Model.RecruitmentProcessViewModelList.Where(rp => rp.PaymentType == Model.PaymentTypesViewModelList[i].PaymentType).ToList().Count
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </fieldset>
+
+                    <div class="form-group text-center">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Filtruj" class="btn btn-dark" />
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        }
+    </div>
+    <div class="column right">
+        <div id="accordion">
+            @foreach (var rp in Model.RecruitmentProcessViewModelList.OrderByDescending(x => x.Id))
+            {
+                <div class="card">
+                    <div class="card-header bg-dark" id="heading-@rp.Id">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link text-light" type="button" data-toggle="collapse" data-target="#collapse-@rp.Id" aria-expanded="true" aria-controls="collapse-@rp.Id">
+                                <h3>Firma: @Html.DisplayFor(m => rp.Company) - Miasto: @Html.DisplayFor(m => rp.City) - Stanowisko: @Html.DisplayFor(m => rp.Position)</h3>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapse-@rp.Id" class="collapse" aria-labelledby="heading-@rp.Id" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>
+                                Kod procesu: @Html.DisplayFor(m => rp.ProcessCode)
+                            </p>
+                            <p>
+                                Twoje zadania:
+                                @{string[] taskList = rp.Tasks.Split(',');}
+                                <ul>
+                                    @foreach (var task in taskList)
+                                    {
+                                        <li>@Html.DisplayFor(t => task)</li>
+                                    }
+                                </ul>
+                            </p>
+                            <p>
+                                Czego wymagamy:
+                                @{string[] requirementsList = rp.Requirements.Split(',');}
+                                <ul>
+                                    @foreach (var rq in requirementsList)
+                                    {
+                                        <li>@Html.DisplayFor(r => rq)</li>
+                                    }
+                                </ul>
+                            </p>
+                            <p>
+                                Co oferujemy:
+                                @{string[] offerList = rp.Offer.Split(',');}
+                                <ul>
+                                    @foreach (var of in offerList)
+                                    {
+                                        <li>@Html.DisplayFor(o => of)</li>
+                                    }
+                                </ul>
+                            </p>
+                            @if (rp.FormOfEmployment != null && rp.FormOfEmployment != "Nieokreślone")
+                            {
+                                <p>Forma zatrudnienia: @Html.DisplayFor(m => rp.FormOfEmployment)</p>
+                            }
+                            @if (rp.PaymentType != null && rp.PaymentType != "Nieokreślone")
+                            {
+                                <p>Rodzaj wynagrodzenia: @Html.DisplayFor(m => rp.PaymentType)</p>
+                            }
+                            @if (rp.Payment != null)
+                            {
+                                <p>Stawka: @Html.DisplayFor(m => rp.Payment) zł</p>
+                            }
+                            @if (rp.Email != null)
+                            {
+                                <p>Email: @Html.DisplayFor(m => rp.Email)</p>
+                            }
+                            @if (rp.Phone != null)
+                            {
+                                <p>
+                                    Telefon: @Html.DisplayFor(m => rp.Phone)
+                                </p>
+                            }
+                            @using RP.AccountModule.Interfaces
+                            @if (User.Identity.IsAuthenticated && User.IsInRole("Użytkownik"))
+                            {
+
+                                var userService = DependencyResolver.Current.GetService<IUserService>();
+                                if (userService.GetUserByEmail(User.Identity.Name).RecruitmentProcess.Where(p => p.Id == rp.Id).FirstOrDefault() != null)
+                                {
+                                    <p class="btn btn-dark">
+                                        Już aplikowano
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p>
+                                        @Html.ActionLink("Aplikuj", "Apply", new { id = rp.Id }, new { @class = "btn btn-dark" })
+                                    </p>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+    </div>
+</div>
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    .column {
+        float: left;
+        padding: 10px;
+    }
+
+        .column.left {
+            width: 15%;
+        }
+
+        .column.right {
+            width: 70%;
+        }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>

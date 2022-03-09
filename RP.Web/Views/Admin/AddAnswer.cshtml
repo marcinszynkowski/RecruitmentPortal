@@ -1,0 +1,36 @@
+﻿@model RP.Entities.AdminModule.ViewModels.AddAnswerViewModel
+@{
+    ViewBag.Title = "AddAnswer";
+}
+
+<h2 class="text-center">Dodawanie odpowiedzi do pytania @Model.SurveyQuestionName</h2>
+
+<div>
+    @Html.ActionLink("Powrót", "MenageAnswers", "Admin", new { id = Model.QuestionId, recruitmentProcessId = Model.RecruitmentProcessId, questionTypeId = Model.SurveyQuestionTypeId }, new { @class = "btn btn-dark" })
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => Model.RecruitmentProcessId)
+    @Html.HiddenFor(model => Model.QuestionId)
+    @Html.HiddenFor(model => Model.SurveyQuestionTypeId)
+    <div class="form-group">
+        @Html.LabelFor(model => model.Answer, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Answer, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Answer, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Dodaj" class="btn btn-dark" />
+        </div>
+    </div>
+</div>
+}

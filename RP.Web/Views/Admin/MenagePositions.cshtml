@@ -1,0 +1,34 @@
+﻿@model IEnumerable<RP.Entities.Recruitment.Position>
+@{
+    ViewBag.Title = "MenagePositions";
+}
+
+<h2 class="text-center">Zarządzanie stanowiskami</h2>
+
+<div>
+    @Html.ActionLink("Dodanie stanowiska", "AddPosition", "Admin", null, new { @class = "btn btn-dark" })
+</div><br />
+
+<div>
+    <table class="table table-striped table-condensed table-hover container-fluid">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nazwa</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(m => i.Id)</td>
+                    <td> @Html.DisplayFor(m => i.Name)</td>
+                    <td>@Html.ActionLink("Edytuj", "EditPosition", "Admin", new { id = i.Id }, new { @class = "btn btn-dark" })</td>
+                    <td>@Html.ActionLink("Usuń", "DeletePosition", "Admin", new { id = i.Id }, new { @class = "btn btn-dark" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

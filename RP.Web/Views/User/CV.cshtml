@@ -1,0 +1,120 @@
+﻿@using RP.UserModule;
+@using RP.Entities.User;
+@model RP.Entities.UserModule.ViewModels.cvViewModel
+@{
+    ViewBag.Title = "CV";
+    Layout = null;
+}
+
+<center><h2>Curriculum Vitae</h2></center>
+
+<p lang="de-AT" style="margin-top: 0.2cm; margin-bottom: 0.4cm; background: #e6e6e6; border: none; padding: 0cm">
+    <font color="#000000"> </font><font face="Arial, sans-serif">
+        <b>
+            <font color="#000000">
+                Dane osobowe
+            </font>
+        </b>
+    </font>
+</p>
+
+<br /> <b> Imię i nazwisko: </b> @Model.Name
+<br /><b> Data urodzenia:  </b> @Model.Birthday
+<br /><b> Adres:	</b> @Model.City
+<br /><b> Telefon: </b> @Model.Phone
+<br /><b> E-mail: </b> @User.Identity.Name
+
+
+<p style="margin-top: 0.2cm; margin-bottom: 0.4cm; background: #e6e6e6; border: none; padding: 0cm">
+    <font color="#000000"> </font><font face="Arial, sans-serif">
+        <b>
+            <font color="#000000">
+                Wykształcenie
+            </font>
+        </b>
+    </font>
+</p>
+
+@foreach (Education education in Model.education)
+{
+    <br /> @education.NameOfSchool
+    <br /> @education.Major
+    <br /> @education.Minor
+
+}
+
+
+
+
+
+
+<br /> <b>
+    Doświadczenie zawodowe
+</b>
+
+@foreach (WorkExperience workexp in Model.workexp)
+{
+    UserModule um = new UserModule();
+
+    <p>
+        @um.getDateFromDataTime(@workexp.DateFrom) - @um.getDateFromDataTime(@workexp.DateTo) @workexp.Position
+        <br /> @workexp.Company
+        <br /> @workexp.Responsibilities
+    </p>
+}
+
+<p style="margin-top: 0.2cm; margin-bottom: 0.4cm; background: #e6e6e6; border: none; padding: 0cm">
+    <font color="#000000"> </font><font face="Arial, sans-serif">
+        <b>
+            <font color="#000000">
+                Dodatkowe informacje
+            </font>
+        </b>
+    </font>
+</p>
+
+
+<br /> <b>
+    Umiejętności :
+</b>
+
+@foreach (Skill skill in Model.skills)
+{
+    <br /> @skill.Name
+    <br /> @skill.Description
+    <br />
+}
+
+<br /> <b>
+    Języki obce :
+</b>
+
+@foreach (UserForeignLanguage language in Model.languages)
+{
+    UserModule um = new UserModule();
+
+    if (language.ForeignLanguageId == 1)
+    {
+        <p> @um.getLangName(language.ForeignLanguageId) : podstawowy </p>
+    }
+    if (language.ForeignLanguageId == 2)
+    {
+        <p> @um.getLangName(language.ForeignLanguageId) : średni </p>
+    }
+    if (language.ForeignLanguageId == 3)
+    {
+        <p> @um.getLangName(language.ForeignLanguageId) : zaawansowany</p>
+    }
+}
+
+<br /> <b>Kursy : </b>
+
+@foreach (Course course in Model.courses)
+{
+    UserModule um = new UserModule();
+
+    <p>
+        @um.getDateFromDataTime(@course.DateFrom) - @um.getDateFromDataTime(@course.DateTo)   @course.Name
+    </p>
+
+}

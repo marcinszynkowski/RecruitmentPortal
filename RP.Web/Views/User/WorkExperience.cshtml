@@ -1,0 +1,49 @@
+﻿@model IEnumerable<RP.Entities.User.WorkExperience>
+
+@{
+    ViewBag.Title = "Doświadczenia zawodowe";
+}
+
+<h2>Doświadczenie zawodowe</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.ActionLink("Powrót", "EditProfile", "User")
+    </div>
+
+    <div>
+        @Html.ActionLink("Dodanie doświadczenia zawodowego", "AddWorkExperience", "User")
+    </div>
+        <table class="table table-striped table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Stanowisko</th>
+                    <th>Data Od</th>
+                    <th>Data Do</th>
+                    <th>Obowiązki</th>
+                    <th>Firma</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                <tr>
+                    <td> @Html.DisplayFor(m => i.Id)</td>
+                    <td> @Html.DisplayFor(m => i.Position)</td>
+                    <td> @Html.DisplayFor(m => i.DateFrom)</td>
+                    <td> @Html.DisplayFor(m => i.DateTo)</td>
+                    <td> @Html.DisplayFor(m => i.Responsibilities)</td>
+                    <td> @Html.DisplayFor(m => i.Company)</td>
+                    <td>@Html.ActionLink("Edytuj", "EditWorkExperience", "User", new { id = i.Id }, null)</td>
+                    <td>@Html.ActionLink("Usuń", "DeleteWorkExperience", "User", new { id = i.Id }, null)</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+}
