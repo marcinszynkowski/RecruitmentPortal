@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Processes>
+  <Process Code="8">
+    <User Id="4">
+      <FirstName>Dawid</FirstName>
+      <LastName>Grygowicz</LastName>
+      <Email>grygowiczdawid@gmail.com</Email>
+      <Birthday>2018-10-18</Birthday>
+      <City>Elbląg</City>
+      <Phone>6776575675675</Phone>
+      <VirtualCVAdress>ce702498-3363-4c34-ac11-2b60e88f09d4</VirtualCVAdress>
+      <Survey>
+        <Question type="open" question="Pytanie1" answer="kkkk" />
+        <Question type="open" question="Pytanie2" answer="hjkhjkhjk" />
+        <Question type="closedOne" question="Pytanie3" answer="Odpowiedź 2 do pytania 3" />
+        <Question type="closedOne" question="Pytanie4" answer="Odpowiedź 1 do pytania 4" />
+        <Question type="closedMany" question="Pytanie5">
+          <Answer>Odpowiedź 1 do pytania 5</Answer>
+          <Answer>Odpowiedź 2 do pytania 5</Answer>
+        </Question>
+        <Question type="closedMany" question="Pytanie6">
+          <Answer>Odpowiedź 2 do pytania 6</Answer>
+        </Question>
+      </Survey>
+    </User>
+  </Process>
+</Processes>
