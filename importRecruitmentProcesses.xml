@@ -11,7 +11,7 @@
     <FormOfEmployment>Umowa o pracę</FormOfEmployment>
     <PaymentType>stawka miesięczna</PaymentType>
     <Payment>4000</Payment>
-    <Email>jaggerjack@wp.pl</Email>
+    <Email>Kack@wp.pl</Email>
     <Phone>678656896</Phone>
     <Survey>
       <Question type ="open" question ="Pytanie1"></Question>
@@ -43,7 +43,7 @@
     <Tasks>tworzenie witryny firmy, pomoc</Tasks>
     <Requirements>znajomość sql, znajomość c#</Requirements>
     <Offer>karta multisport, dobra atmosfera</Offer>
-    <Email>jaggerjack@wp.pl</Email>
+    <Email>jplj@wp.pl</Email>
     <Phone>678656896</Phone>
     <Survey>
       <Question type ="open" question ="Pytanie1"></Question>
@@ -78,7 +78,7 @@
     <FormOfEmployment>Umowa zlecenie</FormOfEmployment>
     <PaymentType>stawka dzienna</PaymentType>
     <Payment>4000</Payment>
-    <Email>jaggerjack@wp.pl</Email>
+    <Email>jplj@wp.pl</Email>
     <Phone>678656896</Phone>
     <Survey>
       <Question type ="open" question ="Pytanie1"></Question>
@@ -111,7 +111,7 @@
     <Requirements>znajomość sql, znajomość c#</Requirements>
     <Offer>karta multisport, dobra atmosfera</Offer>
     <FormOfEmployment>Umowa zlecenie</FormOfEmployment>
-    <Email>jaggerjack@wp.pl</Email>
+    <Email>jplj@wp.pl</Email>
     <Phone>678656896</Phone>
     <Survey>
       <Question type ="open" question ="Pytanie1"></Question>
@@ -146,7 +146,7 @@
     <FormOfEmployment>Umowa o pracę</FormOfEmployment>
     <PaymentType>stawka tygodniowa</PaymentType>
     <Payment>4000</Payment>
-    <Email>jaggerjack@wp.pl</Email>
+    <Email>jplj@wp.pl</Email>
     <Phone>678656896</Phone>
     <Survey>
       <Question type ="open" question ="Pytanie1"></Question>
@@ -178,7 +178,7 @@
     <Tasks>tworzenie witryny firmy, pomoc</Tasks>
     <Requirements>znajomość sql, znajomość c#</Requirements>
     <Offer>karta multisport, dobra atmosfera</Offer>
-    <Email>jaggerjack@wp.pl</Email>
+    <Email>jplj@wp.pl</Email>
     <Phone>678656896</Phone>
     <Survey>
       <Question type ="open" question ="Pytanie1"></Question>
@@ -213,7 +213,7 @@
     <FormOfEmployment>Umowa o pracę</FormOfEmployment>
     <PaymentType>stawka dzienna</PaymentType>
     <Payment>4000</Payment>
-    <Email>jaggerjack@wp.pl</Email>
+    <Email>jplj@wp.pl</Email>
     <Phone>678656896</Phone>
     <Survey>
       <Question type ="open" question ="Pytanie1"></Question>
@@ -246,7 +246,7 @@
     <Requirements>znajomość sql, znajomość c#</Requirements>
     <Offer>karta multisport, dobra atmosfera</Offer>
     <PaymentType>stawka dzienna</PaymentType>
-    <Email>jaggerjack@wp.pl</Email>
+    <Email>jplj@wp.pl</Email>
     <Phone>678656896</Phone>
     <Survey>
       <Question type ="open" question ="Pytanie1"></Question>
@@ -281,7 +281,7 @@
     <FormOfEmployment>Umowa o dzieło</FormOfEmployment>
     <PaymentType>stawka miesięczna</PaymentType>
     <Payment>4000</Payment>
-    <Email>jaggerjack@wp.pl</Email>
+    <Email>jplj@wp.pl</Email>
     <Phone>678656896</Phone>
     <Survey>
       <Question type ="open" question ="Pytanie1"></Question>
@@ -314,7 +314,7 @@
     <Requirements>znajomość sql, znajomość c#</Requirements>
     <Offer>karta multisport, dobra atmosfera</Offer>
     <PaymentType>stawka miesięczna</PaymentType>
-    <Email>jaggerjack@wp.pl</Email>
+    <Email>jplj@wp.pl</Email>
     <Phone>678656896</Phone>
     <Survey>
       <Question type ="open" question ="Pytanie1"></Question>
@@ -348,7 +348,7 @@
     <Offer>karta multisport, dobra atmosfera</Offer>
     <PaymentType>stawka dzienna</PaymentType>
     <Payment>4000</Payment>
-    <Email>jaggerjack@wp.pl</Email>
+    <Email>jplj@wp.pl</Email>
     <Phone>678656896</Phone>
     <Survey>
       <Question type ="open" question ="Pytanie1"></Question>
@@ -381,7 +381,416 @@
     <Requirements>znajomość sql, znajomość c#</Requirements>
     <Offer>karta multisport, dobra atmosfera</Offer>
     <PaymentType>stawka tygodniowa</PaymentType>
-    <Email>jaggerjack@wp.pl</Email>
+    <Email>jplj@wp.pl</Email>
+    <Phone>678656896</Phone>
+    <Survey>
+      <Question type ="open" question ="Pytanie1"></Question>
+      <Question type ="open" question ="Pytanie2"></Question>
+      <Question type ="closedOne" question ="Pytanie3">
+        <Answer>Odpowiedź 1 do pytania 3</Answer>
+        <Answer>Odpowiedź 2 do pytania 3</Answer>
+        <Answer>Odpowiedź 3 do pytania 3</Answer>
+      </Question>
+      <Question type ="closedOne" question ="Pytanie4">
+        <Answer>Odpowiedź 1 do pytania 4</Answer>
+        <Answer>Odpowiedź 2 do pytania 4</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie5">
+        <Answer>Odpowiedź 1 do pytania 5</Answer>
+        <Answer>Odpowiedź 2 do pytania 5</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie6">
+        <Answer>Odpowiedź 1 do pytania 6</Answer>
+        <Answer>Odpowiedź 2 do pytania 6</Answer>
+        <Answer>Odpowiedź 3 do pytania 6</Answer>
+      </Question>
+    </Survey>
+  </Process>
+=======
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xmlData>
+  <version>1.0</version>
+  <Process code ="1">
+    <Company>InfoPower</Company>
+    <City>Elbląg</City>
+    <Position>Informatyk</Position>
+    <Tasks>tworzenie witryny firmy, pomoc</Tasks>
+    <Requirements>znajomość sql, znajomość c#</Requirements>
+    <Offer>karta multisport, dobra atmosfera</Offer>
+    <FormOfEmployment>Umowa o pracę</FormOfEmployment>
+    <PaymentType>stawka miesięczna</PaymentType>
+    <Payment>4000</Payment>
+    <Email>jplj@wp.pl</Email>
+    <Phone>678656896</Phone>
+    <Survey>
+      <Question type ="open" question ="Pytanie1"></Question>
+      <Question type ="open" question ="Pytanie2"></Question>
+      <Question type ="closedOne" question ="Pytanie3">
+        <Answer>Odpowiedź 1 do pytania 3</Answer>
+        <Answer>Odpowiedź 2 do pytania 3</Answer>
+        <Answer>Odpowiedź 3 do pytania 3</Answer>
+      </Question>
+      <Question type ="closedOne" question ="Pytanie4">
+        <Answer>Odpowiedź 1 do pytania 4</Answer>
+        <Answer>Odpowiedź 2 do pytania 4</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie5">
+        <Answer>Odpowiedź 1 do pytania 5</Answer>
+        <Answer>Odpowiedź 2 do pytania 5</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie6">
+        <Answer>Odpowiedź 1 do pytania 6</Answer>
+        <Answer>Odpowiedź 2 do pytania 6</Answer>
+        <Answer>Odpowiedź 3 do pytania 6</Answer>
+      </Question>
+    </Survey>
+  </Process>
+  <Process code ="2">
+    <Company>Oke</Company>
+    <City>Gdynia</City>
+    <Position>Sieciowiec</Position>
+    <Tasks>tworzenie witryny firmy, pomoc</Tasks>
+    <Requirements>znajomość sql, znajomość c#</Requirements>
+    <Offer>karta multisport, dobra atmosfera</Offer>
+    <Email>jplj@wp.pl</Email>
+    <Phone>678656896</Phone>
+    <Survey>
+      <Question type ="open" question ="Pytanie1"></Question>
+      <Question type ="open" question ="Pytanie2"></Question>
+      <Question type ="closedOne" question ="Pytanie3">
+        <Answer>Odpowiedź 1 do pytania 3</Answer>
+        <Answer>Odpowiedź 2 do pytania 3</Answer>
+        <Answer>Odpowiedź 3 do pytania 3</Answer>
+      </Question>
+      <Question type ="closedOne" question ="Pytanie4">
+        <Answer>Odpowiedź 1 do pytania 4</Answer>
+        <Answer>Odpowiedź 2 do pytania 4</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie5">
+        <Answer>Odpowiedź 1 do pytania 5</Answer>
+        <Answer>Odpowiedź 2 do pytania 5</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie6">
+        <Answer>Odpowiedź 1 do pytania 6</Answer>
+        <Answer>Odpowiedź 2 do pytania 6</Answer>
+        <Answer>Odpowiedź 3 do pytania 6</Answer>
+      </Question>
+    </Survey>
+  </Process>
+  <Process code ="3">
+    <Company>InfoPower</Company>
+    <City>Gdańsk</City>
+    <Position>Sekretarka</Position>
+    <Tasks>tworzenie witryny firmy, pomoc</Tasks>
+    <Requirements>znajomość sql, znajomość c#</Requirements>
+    <Offer>karta multisport, dobra atmosfera</Offer>
+    <FormOfEmployment>Umowa zlecenie</FormOfEmployment>
+    <PaymentType>stawka dzienna</PaymentType>
+    <Payment>4000</Payment>
+    <Email>jaggck@wp.pl</Email>
+    <Phone>678656896</Phone>
+    <Survey>
+      <Question type ="open" question ="Pytanie1"></Question>
+      <Question type ="open" question ="Pytanie2"></Question>
+      <Question type ="closedOne" question ="Pytanie3">
+        <Answer>Odpowiedź 1 do pytania 3</Answer>
+        <Answer>Odpowiedź 2 do pytania 3</Answer>
+        <Answer>Odpowiedź 3 do pytania 3</Answer>
+      </Question>
+      <Question type ="closedOne" question ="Pytanie4">
+        <Answer>Odpowiedź 1 do pytania 4</Answer>
+        <Answer>Odpowiedź 2 do pytania 4</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie5">
+        <Answer>Odpowiedź 1 do pytania 5</Answer>
+        <Answer>Odpowiedź 2 do pytania 5</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie6">
+        <Answer>Odpowiedź 1 do pytania 6</Answer>
+        <Answer>Odpowiedź 2 do pytania 6</Answer>
+        <Answer>Odpowiedź 3 do pytania 6</Answer>
+      </Question>
+    </Survey>
+  </Process>
+  <Process code ="4">
+    <Company>Oke</Company>
+    <City>Elbląg</City>
+    <Position>Informatyk</Position>
+    <Tasks>tworzenie witryny firmy, pomoc</Tasks>
+    <Requirements>znajomość sql, znajomość c#</Requirements>
+    <Offer>karta multisport, dobra atmosfera</Offer>
+    <FormOfEmployment>Umowa zlecenie</FormOfEmployment>
+    <Email>jakfs@wp.pl</Email>
+    <Phone>678656896</Phone>
+    <Survey>
+      <Question type ="open" question ="Pytanie1"></Question>
+      <Question type ="open" question ="Pytanie2"></Question>
+      <Question type ="closedOne" question ="Pytanie3">
+        <Answer>Odpowiedź 1 do pytania 3</Answer>
+        <Answer>Odpowiedź 2 do pytania 3</Answer>
+        <Answer>Odpowiedź 3 do pytania 3</Answer>
+      </Question>
+      <Question type ="closedOne" question ="Pytanie4">
+        <Answer>Odpowiedź 1 do pytania 4</Answer>
+        <Answer>Odpowiedź 2 do pytania 4</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie5">
+        <Answer>Odpowiedź 1 do pytania 5</Answer>
+        <Answer>Odpowiedź 2 do pytania 5</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie6">
+        <Answer>Odpowiedź 1 do pytania 6</Answer>
+        <Answer>Odpowiedź 2 do pytania 6</Answer>
+        <Answer>Odpowiedź 3 do pytania 6</Answer>
+      </Question>
+    </Survey>
+  </Process>
+  <Process code ="5">
+    <Company>Stokota</Company>
+    <City>Elbląg</City>
+    <Position>Księgowy</Position>
+    <Tasks>tworzenie witryny firmy, pomoc</Tasks>
+    <Requirements>znajomość sql, znajomość c#</Requirements>
+    <Offer>karta multisport, dobra atmosfera</Offer>
+    <FormOfEmployment>Umowa o pracę</FormOfEmployment>
+    <PaymentType>stawka tygodniowa</PaymentType>
+    <Payment>4000</Payment>
+    <Email>pololo@wp.pl</Email>
+    <Phone>678656896</Phone>
+    <Survey>
+      <Question type ="open" question ="Pytanie1"></Question>
+      <Question type ="open" question ="Pytanie2"></Question>
+      <Question type ="closedOne" question ="Pytanie3">
+        <Answer>Odpowiedź 1 do pytania 3</Answer>
+        <Answer>Odpowiedź 2 do pytania 3</Answer>
+        <Answer>Odpowiedź 3 do pytania 3</Answer>
+      </Question>
+      <Question type ="closedOne" question ="Pytanie4">
+        <Answer>Odpowiedź 1 do pytania 4</Answer>
+        <Answer>Odpowiedź 2 do pytania 4</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie5">
+        <Answer>Odpowiedź 1 do pytania 5</Answer>
+        <Answer>Odpowiedź 2 do pytania 5</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie6">
+        <Answer>Odpowiedź 1 do pytania 6</Answer>
+        <Answer>Odpowiedź 2 do pytania 6</Answer>
+        <Answer>Odpowiedź 3 do pytania 6</Answer>
+      </Question>
+    </Survey>
+  </Process>
+  <Process code ="6">
+    <Company>Oke</Company>
+    <City>Elbląg</City>
+    <Position>Programista C++</Position>
+    <Tasks>tworzenie witryny firmy, pomoc</Tasks>
+    <Requirements>znajomość sql, znajomość c#</Requirements>
+    <Offer>karta multisport, dobra atmosfera</Offer>
+    <Email>jplj@wp.pl</Email>
+    <Phone>678656896</Phone>
+    <Survey>
+      <Question type ="open" question ="Pytanie1"></Question>
+      <Question type ="open" question ="Pytanie2"></Question>
+      <Question type ="closedOne" question ="Pytanie3">
+        <Answer>Odpowiedź 1 do pytania 3</Answer>
+        <Answer>Odpowiedź 2 do pytania 3</Answer>
+        <Answer>Odpowiedź 3 do pytania 3</Answer>
+      </Question>
+      <Question type ="closedOne" question ="Pytanie4">
+        <Answer>Odpowiedź 1 do pytania 4</Answer>
+        <Answer>Odpowiedź 2 do pytania 4</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie5">
+        <Answer>Odpowiedź 1 do pytania 5</Answer>
+        <Answer>Odpowiedź 2 do pytania 5</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie6">
+        <Answer>Odpowiedź 1 do pytania 6</Answer>
+        <Answer>Odpowiedź 2 do pytania 6</Answer>
+        <Answer>Odpowiedź 3 do pytania 6</Answer>
+      </Question>
+    </Survey>
+  </Process>
+  <Process code ="7">
+    <Company>InfoPower</Company>
+    <City>Elbląg</City>
+    <Position>Informatyk</Position>
+    <Tasks>tworzenie witryny firmy, pomoc</Tasks>
+    <Requirements>znajomość sql, znajomość c#</Requirements>
+    <Offer>karta multisport, dobra atmosfera</Offer>
+    <FormOfEmployment>Umowa o pracę</FormOfEmployment>
+    <PaymentType>stawka dzienna</PaymentType>
+    <Payment>4000</Payment>
+    <Email>frartataak@wp.pl</Email>
+    <Phone>678656896</Phone>
+    <Survey>
+      <Question type ="open" question ="Pytanie1"></Question>
+      <Question type ="open" question ="Pytanie2"></Question>
+      <Question type ="closedOne" question ="Pytanie3">
+        <Answer>Odpowiedź 1 do pytania 3</Answer>
+        <Answer>Odpowiedź 2 do pytania 3</Answer>
+        <Answer>Odpowiedź 3 do pytania 3</Answer>
+      </Question>
+      <Question type ="closedOne" question ="Pytanie4">
+        <Answer>Odpowiedź 1 do pytania 4</Answer>
+        <Answer>Odpowiedź 2 do pytania 4</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie5">
+        <Answer>Odpowiedź 1 do pytania 5</Answer>
+        <Answer>Odpowiedź 2 do pytania 5</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie6">
+        <Answer>Odpowiedź 1 do pytania 6</Answer>
+        <Answer>Odpowiedź 2 do pytania 6</Answer>
+        <Answer>Odpowiedź 3 do pytania 6</Answer>
+      </Question>
+    </Survey>
+  </Process>
+  <Process code ="8">
+    <Company>Oke</Company>
+    <City>Gdynia</City>
+    <Position>Sieciowiec</Position>
+    <Tasks>tworzenie witryny firmy, pomoc</Tasks>
+    <Requirements>znajomość sql, znajomość c#</Requirements>
+    <Offer>karta multisport, dobra atmosfera</Offer>
+    <PaymentType>stawka dzienna</PaymentType>
+    <Email>jgsdagsdgds@wp.pl</Email>
+    <Phone>678656896</Phone>
+    <Survey>
+      <Question type ="open" question ="Pytanie1"></Question>
+      <Question type ="open" question ="Pytanie2"></Question>
+      <Question type ="closedOne" question ="Pytanie3">
+        <Answer>Odpowiedź 1 do pytania 3</Answer>
+        <Answer>Odpowiedź 2 do pytania 3</Answer>
+        <Answer>Odpowiedź 3 do pytania 3</Answer>
+      </Question>
+      <Question type ="closedOne" question ="Pytanie4">
+        <Answer>Odpowiedź 1 do pytania 4</Answer>
+        <Answer>Odpowiedź 2 do pytania 4</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie5">
+        <Answer>Odpowiedź 1 do pytania 5</Answer>
+        <Answer>Odpowiedź 2 do pytania 5</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie6">
+        <Answer>Odpowiedź 1 do pytania 6</Answer>
+        <Answer>Odpowiedź 2 do pytania 6</Answer>
+        <Answer>Odpowiedź 3 do pytania 6</Answer>
+      </Question>
+    </Survey>
+  </Process>
+  <Process code ="9">
+    <Company>InfoPower</Company>
+    <City>Gdynia</City>
+    <Position>Programista C#</Position>
+    <Tasks>tworzenie witryny firmy, pomoc</Tasks>
+    <Requirements>znajomość sql, znajomość c#</Requirements>
+    <Offer>karta multisport, dobra atmosfera</Offer>
+    <FormOfEmployment>Umowa o dzieło</FormOfEmployment>
+    <PaymentType>stawka miesięczna</PaymentType>
+    <Payment>4000</Payment>
+    <Email>nononplplplp@wp.pl</Email>
+    <Phone>678656896</Phone>
+    <Survey>
+      <Question type ="open" question ="Pytanie1"></Question>
+      <Question type ="open" question ="Pytanie2"></Question>
+      <Question type ="closedOne" question ="Pytanie3">
+        <Answer>Odpowiedź 1 do pytania 3</Answer>
+        <Answer>Odpowiedź 2 do pytania 3</Answer>
+        <Answer>Odpowiedź 3 do pytania 3</Answer>
+      </Question>
+      <Question type ="closedOne" question ="Pytanie4">
+        <Answer>Odpowiedź 1 do pytania 4</Answer>
+        <Answer>Odpowiedź 2 do pytania 4</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie5">
+        <Answer>Odpowiedź 1 do pytania 5</Answer>
+        <Answer>Odpowiedź 2 do pytania 5</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie6">
+        <Answer>Odpowiedź 1 do pytania 6</Answer>
+        <Answer>Odpowiedź 2 do pytania 6</Answer>
+        <Answer>Odpowiedź 3 do pytania 6</Answer>
+      </Question>
+    </Survey>
+  </Process>
+  <Process code ="10">
+    <Company>Oke</Company>
+    <City>Elbląg</City>
+    <Position>Sieciowiec</Position>
+    <Tasks>tworzenie witryny firmy, pomoc</Tasks>
+    <Requirements>znajomość sql, znajomość c#</Requirements>
+    <Offer>karta multisport, dobra atmosfera</Offer>
+    <PaymentType>stawka miesięczna</PaymentType>
+    <Email>polowp@wp.pl</Email>
+    <Phone>678656896</Phone>
+    <Survey>
+      <Question type ="open" question ="Pytanie1"></Question>
+      <Question type ="open" question ="Pytanie2"></Question>
+      <Question type ="closedOne" question ="Pytanie3">
+        <Answer>Odpowiedź 1 do pytania 3</Answer>
+        <Answer>Odpowiedź 2 do pytania 3</Answer>
+        <Answer>Odpowiedź 3 do pytania 3</Answer>
+      </Question>
+      <Question type ="closedOne" question ="Pytanie4">
+        <Answer>Odpowiedź 1 do pytania 4</Answer>
+        <Answer>Odpowiedź 2 do pytania 4</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie5">
+        <Answer>Odpowiedź 1 do pytania 5</Answer>
+        <Answer>Odpowiedź 2 do pytania 5</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie6">
+        <Answer>Odpowiedź 1 do pytania 6</Answer>
+        <Answer>Odpowiedź 2 do pytania 6</Answer>
+        <Answer>Odpowiedź 3 do pytania 6</Answer>
+      </Question>
+    </Survey>
+  </Process>
+  <Process code ="11">
+    <Company>InfoPower</Company>
+    <City>Elbląg</City>
+    <Position>Informatyk</Position>
+    <Tasks>tworzenie witryny firmy, pomoc</Tasks>
+    <Requirements>znajomość sql, znajomość c#</Requirements>
+    <Offer>karta multisport, dobra atmosfera</Offer>
+    <PaymentType>stawka dzienna</PaymentType>
+    <Payment>4000</Payment>
+    <Email>jplj@wp.pl</Email>
+    <Phone>678656896</Phone>
+    <Survey>
+      <Question type ="open" question ="Pytanie1"></Question>
+      <Question type ="open" question ="Pytanie2"></Question>
+      <Question type ="closedOne" question ="Pytanie3">
+        <Answer>Odpowiedź 1 do pytania 3</Answer>
+        <Answer>Odpowiedź 2 do pytania 3</Answer>
+        <Answer>Odpowiedź 3 do pytania 3</Answer>
+      </Question>
+      <Question type ="closedOne" question ="Pytanie4">
+        <Answer>Odpowiedź 1 do pytania 4</Answer>
+        <Answer>Odpowiedź 2 do pytania 4</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie5">
+        <Answer>Odpowiedź 1 do pytania 5</Answer>
+        <Answer>Odpowiedź 2 do pytania 5</Answer>
+      </Question>
+      <Question type ="closedMany" question ="Pytanie6">
+        <Answer>Odpowiedź 1 do pytania 6</Answer>
+        <Answer>Odpowiedź 2 do pytania 6</Answer>
+        <Answer>Odpowiedź 3 do pytania 6</Answer>
+      </Question>
+    </Survey>
+  </Process>
+  <Process code ="12">
+    <Company>Oke</Company>
+    <City>Gdańsk</City>
+    <Position>Sieciowiec</Position>
+    <Tasks>tworzenie witryny firmy, pomoc</Tasks>
+    <Requirements>znajomość sql, znajomość c#</Requirements>
+    <Offer>karta multisport, dobra atmosfera</Offer>
+    <PaymentType>stawka tygodniowa</PaymentType>
+    <Email>jplj@wp.pl</Email>
     <Phone>678656896</Phone>
     <Survey>
       <Question type ="open" question ="Pytanie1"></Question>
